@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.App-header {
+  background-color: teal;
+  height: 100px;
+  padding: 20px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App-title {
+  font-size: 2em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+}
+
+@media screen and (min-width: 960px) {
+  .App-title {
+    animation: type1 5s steps(60, end);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .App-title {
+    font-size: 1.75em;
+  }
+}
+
+@keyframes type1 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes type2 {
+  0% {
+    width: 0;
+  }
+  30% {
+    width: 0;
+  }
+  100% {
+    width: 100;
+  }
+}
+
+@keyframes type3 {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 0;
+  }
+  100% {
+    width: 100;
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+    line-height: 14px;
+  }
+  90% {
+    opacity: 1;
+    line-height: 14px;
+  }
+  99% {
+    opacity: 0.1;
+    line-height: 14px;
+  }
+  100% {
+    opacity: 0;
+    line-height: 0;
+  }
+}
+
+.section-title {
+  color: teal;
+  border-bottom: 1px solid teal;
+}
+
+.Markdownpreviewer-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+  padding: 50px;
+}
+
+@media screen and (max-width: 767px) {
+  .Markdownpreviewer-wrapper {
+    padding: 25px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .Markdownpreviewer-wrapper {
+    grid-template-columns: 1fr;
+    grid-gap: 25px;
+    padding: 10px;
+  }
+}
+
+.Markdownpreviewer-wrapper .info {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  opacity: 0;
+  line-height: 0;
+  font-style: italic;
+}
+
+.Markdownpreviewer-wrapper .info.first {
+  animation: type2 5s steps(60, end), hide 5s;
+}
+
+.Markdownpreviewer-wrapper .info.second {
+  animation: type3 5s steps(60, end), hide 5s;
+}
+
+@media screen and (max-width: 959px) {
+  .Markdownpreviewer-wrapper .info {
+    display: none;
+  }
+}
+
+.markdown.content {
+  min-height: 350px;
+  width: calc(100% - 40px);
+  overflow-y: scroll;
+  padding: 20px;
+}
+
+.preview.content {
+  background: #eee;
+  padding: 1px 20px;
+}

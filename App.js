@@ -13,23 +13,23 @@ class App extends React.Component {
         'Numbered list:\n1. apples\n2. oranges\n3. pears\n\n' +
         'The rain---not the reign---in\nSpain.'
       };
-    
+
     this.handleChange = this.handleChange.bind(this);
   }
-  
+
   handleChange(event) {
      this.setState({
         value: event.target.value,
      });
     }
-  
-  
+
+
   render() {
-    
+
     const createMarkup = () => {
       return {__html: marked(this.state.value)};
     }
-    
+
     return (
       <div className="App">
         <header className="App-header">
